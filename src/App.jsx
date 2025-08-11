@@ -30,7 +30,7 @@ const App = () => {
   }
 
   const removeFromBurger = (ingredient) => {
-    setStack((prev) => prev.filter())
+    setStack((prev) => prev.filter(ingredient => ingredient.id !== ingredient)) /* is this the same or needs a new variable? DRY?*******/
   }
 
   const clearStack = () => {
@@ -41,8 +41,8 @@ const App = () => {
     <main>
       <h1>Burger Stacker</h1>
       <section>
-      <IngredientList availableIngredients={availableIngredients} />
-      <BurgerStack />
+      <IngredientList availableIngredients={availableIngredients} onAdd={addToBurger} />
+      <BurgerStack stack={stack} onRemove={removeFromBurger} onClear={clearStack} />
       </section>
     </main>
   );
