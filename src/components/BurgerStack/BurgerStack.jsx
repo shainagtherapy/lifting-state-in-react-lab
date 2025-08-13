@@ -1,16 +1,19 @@
 // src/components/BurgerStack/BurgerStack.jsx
 
-const BurgerStack = ({stack, onRemove, onClear}) => {
+const BurgerStack = ({stack, onRemove}) => {
   return (
-    <h2>Burger-Stack</h2>
-    <ul>
-        {stack.map((ingredient, id) => (
-            <li key={id} >
-            <span className="label">{IngredientList.name}</span>
-            <button type ="button" className="remove" onClick={() => onRemove(id)} aria-label={`Remove ${IngredientList.name}`} > x </button>
-        </li>
-        ))}
-    </ul>
+    <div>
+      <h2>Your Burger</h2>
+      
+        <ul>
+          {stack.map((ingredient, index) => (
+              <li key={index} style={{backgroundColor: ingredient.color}}>
+              <span className="label">{ingredient.name}</span>
+              <button type ="button" className="remove" onClick={() => onRemove(index)} > x </button>
+          </li>
+          ))}
+        </ul>
+    </div> 
   )
 };
 

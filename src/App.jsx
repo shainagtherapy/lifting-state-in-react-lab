@@ -27,22 +27,18 @@ const App = () => {
 
   const addToBurger = (ingredient) => {
     setStack((prev) => [...prev, ingredient]);
-  }
+  };
 
-  const removeFromBurger = (ingredient) => {
-    setStack((prev) => prev.filter(ingredient => ingredient.id !== ingredient)) /* is this the same or needs a new variable? DRY?*******/
-  }
-
-  const clearStack = () => {
-    setStack([]);
-  }
+  const removeFromBurger = (ingredientToRemove) => {
+    setStack((prev) => prev.filter((ingredient, index) => index !== ingredientToRemove)) // is the filter(ingredient) part shaded? Yet the function doesn't work withouth it
+  };
 
   return (
     <main>
       <h1>Burger Stacker</h1>
       <section>
       <IngredientList availableIngredients={availableIngredients} onAdd={addToBurger} />
-      <BurgerStack stack={stack} onRemove={removeFromBurger} onClear={clearStack} />
+      <BurgerStack stack={stack} onRemove={removeFromBurger} />
       </section>
     </main>
   );
