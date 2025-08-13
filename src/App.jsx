@@ -23,11 +23,11 @@ const App = () => {
     { name: 'Onion', color: 'lightyellow' },
     { name: 'Cheddar Cheese', color: '#FDE18B' },
     { name: 'Swiss Cheese', color: '#F1E1A8' },
-  ];
+  ]
 
   const addToBurger = (ingredient) => {
-    setStack((prev) => [...prev, ingredient]);
-  };
+    setStack((prev) => [...prev, ingredient])
+  }
 
   const removeFromBurger = (ingredientToRemove) => {
     setStack((prev) => prev.filter((ingredient, index) => index !== ingredientToRemove)) // is the filter(ingredient) part shaded? Yet the function doesn't work withouth it
@@ -41,7 +41,7 @@ const App = () => {
       <BurgerStack stack={stack} onRemove={removeFromBurger} />
       </section>
     </main>
-  );
+  )
 };
 
 export default App;

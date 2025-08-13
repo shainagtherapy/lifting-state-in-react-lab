@@ -11,11 +11,11 @@ const IngredientList = ({availableIngredients, onAdd}) => {
           <span>{ingredient.name}</span>
           <button type="button" className="add" onClick= {() => onAdd(ingredient)} label={`Add ${ingredient.name}`} > + </button>
         </li>
-      ))};
+      ))}
       
     </ul>
     </div>
-  );
-};
+  )
+}
 
-export default IngredientList;
+export default IngredientList
